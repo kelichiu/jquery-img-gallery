@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Gallery</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+</head>
+<body>
+  <div class="container clearfix">
+    <div class="gallery">
+      <h1>jQuery Gallery</h1>
+
+      <div class="previews">
+          <a href="#" class="selected" data-full="images/cat/mitzi-1.jpg" data-caption="step1"><img src="images/cat/mitzi-1-small.jpg" /></a>
+          <a href="#" data-full="images/cat/mitzi-2.jpg" data-caption="step2"><img src="images/cat/mitzi-2-small.jpg" /></a>
+          <a href="#" data-full="images/cat/mitzi-3.jpg"><img src="images/cat/mitzi-3-small.jpg" /></a>
+          <a href="#" data-full="images/cat/mitzi-4.jpg"><img src="images/cat/mitzi-4-small.jpg" /></a>
+          <a href="#" data-full="images/cat/mitzi-5.jpg"><img src="images/cat/mitzi-5-small.jpg" /></a>
+          <a href="#" data-full="images/cat/mitzi-6.jpg"><img src="images/cat/mitzi-6-small.jpg" height="75" width="100" /></a>
+      </div>
+
+      <div class="full">
+          <!-- first image is viewable to start -->
+          <a class="popup" href="images/cat/mitzi-1.jpg"><img src="images/cat/mitzi-1.jpg"></a>
+
+      </div>
+
+      <div class="story story-step1">        
+        <p>Caption 1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.</p>
+      </div>
+
+      <div class="story story-step2">
+        <p>Caption 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, sapiente dolorum eveniet delectus error esse. Vero ullam necessitatibus, quod laudantium atque ducimus. Architecto, accusantium ea esse suscipit et quam iure!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="fancybox/jquery.fancybox.js?v=2.1.4"></script>
+  <script src="plugins/jquery.loupe.min.js"></script>
+  <script src="plugins/fadeoverimage.js"></script>
+
+  <script>
+
+    $(function() {
+      $('.previews a').on('click',function(e){       
+
+        var source = $(this).data('full');      // the link info for the big images are in data-full
+
+        $('.full img').attr('src', source);     // look for images with a parent of class .full, and set their sources to data-full
+        $('.popup').attr('href', source);       // the popup attribute is the href, and set the same source as the full image
+
+        $('.selected').removeClass('selected'); // look for things with the selected class and remove them
+        $(this).addClass('selected');           // on this item with class of previews a, add a class of selected
+
+        $('.full img').hide().fadeIn(400);      // on click, hide the full image that's already there, then fade in a new one
+        
+        var caption = $(this).data('caption');
+          $('.story').hide();
+          $('.story-' + caption).show();
+
+      });
+
+
+      $('a.popup').on('click', function(e) {
+        e.preventDefault();                    // the default when you click on anchor link with href is to open the link in the same window. we have to prevent this with preventDefault
+        $.fancybox(this);                   // open the link that's in the a.popup in the fancybox
+      });
+
+      // $('selector').loupe({
+      //   width: 200, // width of magnifier
+      //   height: 150, // height of magnifier
+      //   loupe: 'loupe' // css class for magnifier
+      // });
+
+      // $('.full img').loupe();
+
+    });
+
+
+  </script>
+</body>
+</html>
