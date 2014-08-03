@@ -2,37 +2,80 @@
 <html>
 <head>
   <title>jQuery Gallery</title>
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+   <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+   <link rel="stylesheet" href="stylesheet.css">
+   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Droid+Serif:400
+   ,400italic' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="container clearfix">
     <div class="gallery">
-      <h1>jQuery Gallery</h1>
+      <h1>Meet Mitz</h1>
 
-      <div class="previews">
-          <a href="#" class="selected" data-full="images/cat/mitzi-1.jpg" data-caption="step1"><img src="images/cat/mitzi-1-small.jpg" /></a>
-          <a href="#" data-full="images/cat/mitzi-2.jpg" data-caption="step2"><img src="images/cat/mitzi-2-small.jpg" /></a>
-          <a href="#" data-full="images/cat/mitzi-3.jpg"><img src="images/cat/mitzi-3-small.jpg" /></a>
-          <a href="#" data-full="images/cat/mitzi-4.jpg"><img src="images/cat/mitzi-4-small.jpg" /></a>
-          <a href="#" data-full="images/cat/mitzi-5.jpg"><img src="images/cat/mitzi-5-small.jpg" /></a>
-          <a href="#" data-full="images/cat/mitzi-6.jpg"><img src="images/cat/mitzi-6-small.jpg" height="75" width="100" /></a>
-      </div>
+     
 
       <div class="full">
           <!-- first image is viewable to start -->
           <a class="popup" href="images/cat/mitzi-1.jpg"><img src="images/cat/mitzi-1.jpg"></a>
 
       </div>
-
       <div class="story story-step1">        
-        <p>Caption 1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.</p>
+        <p>
+          <hr>Caption 1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.
+          <hr>
+        </p>
       </div>
 
       <div class="story story-step2">
-        <p>Caption 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, sapiente dolorum eveniet delectus error esse. Vero ullam necessitatibus, quod laudantium atque ducimus. Architecto, accusantium ea esse suscipit et quam iure!</p>
+        <p>
+          <hr>Caption 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.
+          <hr>
+        </p>
       </div>
+      <div class="story story-step3">
+        <p>
+          <hr>Caption 3: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.
+          <hr>
+        </p>
+      </div>
+      <div class="story story-step4">
+        <p>
+          <hr>Caption 4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.
+          <hr>
+        </p>
+      </div>
+       <div class="story story-step5">
+        <p>
+          <hr>Caption 5: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.
+          <hr>
+        </p>
+      </div>  
+      <div class="story story-step6">
+        <p>
+          <hr>Caption 6: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam pariatur ipsa eos voluptatibus, unde consequuntur, qui beatae fugiat repellat excepturi sapiente optio, laborum nisi nihil numquam illum dolore, quasi reprehenderit.
+          <hr>
+        </p>
+      </div>  
+      <div class="previewBar clearfix">
+        <span id="panLeft" class="panner" data-scroll-modifier='-1'></span>
+        <div class="previews clearfix">
+            <a href="#" class="selected" data-full="images/cat/mitzi-1.jpg" data-caption="step1"><img src="images/cat/mitzi-1-small.jpg" /></a>
+            <a href="#" data-full="images/cat/mitzi-2.jpg" data-caption="step2"><img src="images/cat/mitzi-2-small.jpg" /></a>
+            <a href="#" data-full="images/cat/mitzi-3.jpg" data-caption="step3"><img src="images/cat/mitzi-3-small.jpg" /></a>
+            <a href="#" data-full="images/cat/mitzi-4.jpg" data-caption="step4"><img src="images/cat/mitzi-4-small.jpg" /></a>
+            <a href="#" data-full="images/cat/mitzi-5.jpg" data-caption="step5"><img src="images/cat/mitzi-5-small.jpg" /></a>
+            <a href="#" data-full="images/cat/mitzi-6.jpg" data-caption="step6"><img src="images/cat/mitzi-6-small.jpg" height="75" width="100" /></a>
+            
+        </div> 
+        <span id="panRight" class="panner" data-scroll-modifier='1'></span>
+        </div> <!-- previewBar -->
+        
+      
 
+      
     </div>
   </div>
 
@@ -75,6 +118,44 @@
       // });
 
       // $('.full img').loupe();
+
+
+      //Scrolling arrows
+      var scrollHandle = 0,
+              scrollStep = 5,
+              parent = $('.previews');
+
+          //Start the scrolling process
+          $(".panner").on("mouseenter", function () {
+              var data = $(this).data('scrollModifier'),
+                  direction = parseInt(data, 10);        
+
+              $(this).addClass('active');
+
+              startScrolling(direction, scrollStep);
+          });
+
+          //Kill the scrolling
+          $(".panner").on("mouseleave", function () {
+              stopScrolling();
+              $(this).removeClass('active');
+          });
+
+          //Actual handling of the scrolling
+          function startScrolling(modifier, step) {
+              if (scrollHandle === 0) {
+                  scrollHandle = setInterval(function () {
+                      var newOffset = parent.scrollLeft() + (scrollStep * modifier);
+
+                      parent.scrollLeft(newOffset);
+                  }, 10);
+              }
+          }
+
+          function stopScrolling() {
+              clearInterval(scrollHandle);
+              scrollHandle = 0;
+          }
 
     });
 
