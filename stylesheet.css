@@ -32,23 +32,27 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
     overflow: hidden;
 }
 .gallery h1{
-  font-family: 'Helvetic', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 600;
   font-size: 48px;
   letter-spacing: 3px;
   margin: 10px 0 25px;
   padding: 0;
   text-shadow: 2px 2px 2px rgba(201, 201, 201, 1);
-
 } 
+
+.gallery h1 img {
+  width: 60px;
+}
 
 .gallery .desc h2 {
     margin-top: 0;
 }
 
 .previewBar{
-  width: 700px;
-  height: auto;
+  width: 640px;
+  height: 250px;
+  float: left;
 }
 
 .previews { 
@@ -58,7 +62,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   overflow-y: hidden; 
   overflow-x: scroll; 
   white-space: nowrap;
-  
+  float: left;
 }
 
 .gallery .previews a {
@@ -111,7 +115,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .title {
   position: absolute;
   top: 0;
-  left: 55px;
+  left: 53px;
   display: none;
   margin: 0;
   padding: 10px 0 0 0;
@@ -132,18 +136,23 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   border-color: #c2c2c2 transparent transparent transparent;
 }
 .triangle2 {
+  width: 0;
+  height: 0;
   position: absolute;
+  border-style: solid;
+  border-width: 100px 100px 0 100px;
   top: 0;
   left: 5px;
   border-color: #ebebeb transparent transparent transparent;
   z-index: -1;
 }
 
+.triangle.peachpuff {border-color: peachpuff transparent transparent transparent;}
 
 
 .story{
-  margin: 0 0 0 20px;
-  padding: 0;
+  margin: 20px 0;
+  
   display: none;
   width: 280px;
   float: right;
@@ -152,19 +161,18 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   font-weight: 300;
   font-size: 20px;
   color: #333;
+  
 /*  text-transform: uppercase;*/
-  line-height: 145%;
+  line-height: 165%;
 }
 .story-step1 {
-  display:block;
+  display:inline-block;
 }
 .story p{
+  padding: 25px 0;
+  border-top: 5px solid #333;
+  border-bottom: 5px solid #333;
   margin: 0;
-}
-.story hr{
-  border: 0;
-  height: 5px;
-  background: #333;
 }
 
 .full{
@@ -186,10 +194,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 .gallery .full img:hover {
     cursor: pointer;
-}
-
-.story {
-  display:none;
 }
 
 .clearfix:after {

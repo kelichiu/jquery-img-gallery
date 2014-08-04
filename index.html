@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>jQuery Gallery</title>
+  <title>Meet Mizi</title>
    <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
    <link rel="stylesheet" href="stylesheet.css">
    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'>
@@ -9,13 +9,14 @@
    ,400italic' rel='stylesheet' type='text/css'>
    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
    <link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+   <link rel="icon" href="images/cat/favicon.ico">
 </head>
 <body>
   <div class="container clearfix">
     <div class="gallery">
-      <h1>Meet Mitzi</h1>
-
-     
+      <h1>Meet Mitzi
+        <img src="images/cat/yarn.png" alt="ball of yarn image">
+      </h1>
 
       <div class="full">
           <!-- first image is viewable to start -->
@@ -32,44 +33,43 @@
         <h2 class="title part-part6">PART 6</h2>
 
         <div class="triangle"></div>
-        <div class="triangle triangle2"></div>
+        <div class="triangle2"></div>
       </div>
-      
+
       <div class="story story-step1">        
         <p>
-          <hr>Hi there, my name is Mitzi.  Every day when my human goes to work, I sit by the window and wonder what it's like to be on the other side.  I listen to the birds chirping, the sounds of distant traffic, and have conversations with the occasional squirrel.
-          <hr>
+          Hi there, my name is Mitzi.  Every day when my human goes to work, I sit by the window and wonder what it's like to be on the other side.  I listen to the birds chirping, the sounds of distant traffic, and have conversations with the occasional squirrel.
+          
         </p>
       </div>
 
       <div class="story story-step2">
         <p>
-          <hr>I'm only 2 years old, but I have big aspirations to be a traveling cat.  Life is good - I have enough food, my litter box is always clean, and I get a lot of cuddles - but sometimes, I think there must be more beyond these apartment walls!  If only I wasn't so scared to leave my home.
-          <hr>
+          I am only 2 years old, but I have big aspirations to be a traveling cat.  Life is good: I have plenty of food, and I get a lot of cuddles. Sometimes though, I think there must be more beyond these apartment walls!  If only I wasn't so scared to leave my home.
+          
         </p>
       </div>
       <div class="story story-step3">
         <p>
-          <hr>I look at photos of far-away places all the time.  Near the top on my list of places to visit would be Amsterdam.  Do you think this box fits me?  I feel like Godzilla from here.
-          <hr>
+          I look at photos of far-away places all the time.  Near the top on my list of places to visit would be Amsterdam.  Do you think this box fits me?  Rawr, I am Godzilla-Cat!
+          
         </p>
       </div>
       <div class="story story-step4">
         <p>
-          <hr>What a difference it would make to really travel, and to feel a change in the air telling me I'm no longer in Toronto.  I'll spend my days chasing seagulls by the canals, and hop from the roofs of houseboats.  And I know there are shops here where I can get some special varieties of catnip.
-          <hr>
+          What a difference it would make to really travel, and to feel a change in the air which tells me I am no longer in Toronto.  I will spend my days chasing seagulls by the canals, and hop from the roofs of houseboats.
+          
         </p>
       </div>
        <div class="story story-step5">
         <p>
-          <hr>When I'm ready for my next destination, I'll just get on a train.  I'll watch the lush foreign landscapes go by, eating salmon paté and sipping water from the comfort of my window seat.  Just name a destination, and I'll be there!
-          <hr>
+          When I am ready for my next destination, I will simply get on a train.  I will watch the lush foreign landscapes go by, eating salmon pate and sipping water from the comfort of my window seat.  Just name a destination, and I am there!
+          
         </p>
       </div>  
       <div class="story story-step6">
         <p>
-          <hr>Do you think I have what it takes to make it abroad?  My charm is undeniable.  I have big pointy ears, a fluffy tail, and hair between my toes. My human tells me that my grandmother was a Maine Coon, which is where I got my stunning looks.  Give me a call sometime.
-          <hr>
+          Do you think I have what it takes to make it abroad?  I have big pointy ears, a fluffy tail, and hair between my toes. My charm is undeniable. My human tells me that my grandmother was a Maine Coon, which is where I got my stunning looks.  
         </p>
       </div>  
       <div class="previewBar clearfix">
@@ -85,9 +85,6 @@
         </div> 
         <span id="panRight" class="panner" data-scroll-modifier='1'></span>
         </div> <!-- previewBar -->
-        
-      
-
       
     </div>
   </div>
@@ -100,7 +97,8 @@
   <script>
 
     $(function() {
-      $('.previews a').on('click',function(e){       
+
+      $('.previews a').on('click',function(){       
 
         var source = $(this).data('full');      // the link info for the big images are in data-full
 
@@ -118,7 +116,9 @@
 
         var part = $(this).data('title');
           $('.title').hide();
-          $('.part-' + title).show();
+          $('.part-' + part).show();
+
+          $('.triangle').toggleClass('peachpuff');
 
       });
 
@@ -127,15 +127,6 @@
         e.preventDefault();                    // the default when you click on anchor link with href is to open the link in the same window. we have to prevent this with preventDefault
         $.fancybox(this);                   // open the link that's in the a.popup in the fancybox
       });
-
-      // $('selector').loupe({
-      //   width: 200, // width of magnifier
-      //   height: 150, // height of magnifier
-      //   loupe: 'loupe' // css class for magnifier
-      // });
-
-      // $('.full img').loupe();
-
 
       //Scrolling arrows
       var scrollHandle = 0,
